@@ -8,8 +8,11 @@
 	$header = isset($str['header']) ? $str['header'] : "";
 	$image = !empty($str['image']) ? $str['image'] : "";
 	$social = isset($str['social']) ? $str['social'] : "";
-	$tag = isset($str['tag']) ? $str['tag'] : "";
-	// var_dump($tag);
+	$gtag = isset($str['gtag']) ? $str['gtag'] : "";
+	$gtm_head = isset($str['gtm_head']) ? $str['gtm_head'] : "";
+	$gtm_body = isset($str['gtm_body']) ? $str['gtm_body'] : "";
+	$pixel = isset($str['pixel']) ? $str['pixel'] : "";
+	// var_dump($str);
 	class cheeseapi { 
 		// public  $DB = OMDb::singleton();
 		// private $api_banner = "http://49.231.159.204/service/design-banner.php"; 
@@ -60,7 +63,9 @@
 <html style="margin: 0;padding: 0;height: 100%;">
 <head>
 <meta charset="UTF-8" />
-
+	<?php echo $gtag; ?>
+	<?php echo $gtm_head; ?>
+	<?php echo $pixel; ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Cheese mobile banner</title>
@@ -84,27 +89,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="<?=WEB_META_BASE_URL?>css/styles/style.css">
 </head>
+	
 
 <body style="background: white;">
-	<div class="container">
-		<div class="pd-ltr-20 xs-pd-20-10">
-			<div class="min-height-200px">
+	<?php echo $gtm_body; ?>
+	<div class="container" style="padding-left: 5px;">
+		<!-- <div class="pd-ltr-20 xs-pd-20-10"> -->
+			<div class="min-height-200px wrapper-social">
 
 				<!-- HEADER -->
-				<div class="page-header mb-30">
-					<div class="row">
-						<?php echo $header; ?>
-					</div>
-				</div>
+				<?php echo $header; ?>
 				<!-- HEADER -->
 
 				<div class="product-wrap">
 					<div class="product-detail-wrap mb-30">
 
 						<!-- CENTER IMAGE -->
-						<div class="customscroll customscroll-10-p height-100-p xs-pd-20-10">
+						<div class="customscroll customscroll-10-p height-100-p">
 							<div class="min-height-200px">
-								<div class="gallery-wrap">
+								<div class="mb-3">
 									<ul class="row">
 										<?php echo $image; ?>
 									</ul>
@@ -117,60 +120,15 @@
 						<!-- <h4 class="mb-20">Recent Product</h4> -->
 
 						<!-- BUTTOM SOCIAL -->
-						<div class="row clearfix">
-							
+						<div class="clearfix footer-social text-center">
 							<?php echo $social; ?>
-<!-- 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
-								<div class="bg-white pd-10 box-shadow border-radius-5 height-100-p">
-									<div class="notification-list mx-h-450 customscroll">
-										<ul>
-											<li>
-												<a href="#">
-													<img src="<?=WEB_META_BASE_URL?>images/line.png" alt="">
-													<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
-													<p>Lorem ipsum dolor sit amet, </p>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
-								<div class="bg-white pd-10 box-shadow border-radius-5 height-100-p">
-									<div class="notification-list mx-h-450 customscroll">
-										<ul>
-											<li>
-												<a href="#">
-													<img src="<?=WEB_META_BASE_URL?>images/facebook.png" alt="">
-													<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
-													<p>Lorem ipsum dolor sit amet, </p>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-10">
-								<div class="bg-white pd-10 box-shadow border-radius-5 height-100-p">
-									<div class="notification-list mx-h-450 customscroll">
-										<ul>
-											<li>
-												<a href="#">
-													<img src="<?=WEB_META_BASE_URL?>images/instagram.png" alt="">
-													<h3 class="clearfix">John Doe <span>3 mins ago</span></h3>
-													<p>Lorem ipsum dolor sit amet, </p>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div> -->
 						</div>
 						<!-- BUTTOM SOCIAL -->
 
+
 					</div>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 	</div>
 	<script type="text/javascript" src="<?=WEB_META_BASE_URL?>js/scripts/script.js"></script>
