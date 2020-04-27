@@ -1,7 +1,8 @@
 ﻿<?php
 
- 	// define('WEB_META_BASE_URL', 'http://49.231.159.204/');
+ 	// define('WEB_META_BASE_URL', 'http://myadminpage.cdn-ads.com/');
 	define('WEB_META_BASE_URL', 'http://banner-pages.alpha/');
+	
 	$cheeseapi = new cheeseapi($_GET['uid']);
 
 	$str =  $cheeseapi->FNC_GEN_BANNER();
@@ -15,7 +16,7 @@
 	// var_dump($str);
 	class cheeseapi { 
 		// public  $DB = OMDb::singleton();
-		// private $api_banner = "http://49.231.159.204/service/design-banner.php"; 
+		// private $api_banner = "http://myadminpage.cdn-ads.com/service/design-banner.php"; 
 		private $api_banner = "http://banner-pages.alpha/service/design-banner.php";
 		public 	$uid;
 		public function __construct($uid = null) {
@@ -93,7 +94,7 @@
 
 <body style="background: white;">
 	<?php echo $gtm_body; ?>
-	<div class="container" style="padding-left: 5px;">
+	<div class="container">
 		<!-- <div class="pd-ltr-20 xs-pd-20-10"> -->
 			<div class="min-height-200px wrapper-social">
 
